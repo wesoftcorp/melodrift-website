@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen on Melodrift</title>
+  <meta name="description" content="Listen to this track on Melodrift — Ultra-Fast, Ad-Free & Cloud Synced Music Player.">
+  <meta property="og:type" content="music.song">
+  <meta property="og:site_name" content="Melodrift">
+  <meta property="og:title" content="Listen on Melodrift">
+  <meta property="og:description" content="Listen to songs with ultra-fast streaming and crystal clear audio on Melodrift 🎵">
+  <meta property="og:image" content="https://melodrift.rajeevupadhyay.com/images/melodrift.png">
+  <meta property="og:url" content="https://melodrift.rajeevupadhyay.com/play">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Listen on Melodrift">
+  <meta name="twitter:description" content="Listen to songs with ultra-fast streaming and crystal clear audio on Melodrift 🎵">
+  <meta name="twitter:image" content="https://melodrift.rajeevupadhyay.com/images/melodrift.png">
+  <meta name="theme-color" content="#FF5F1F">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/logo/melodrift.png">
+  <style>
+    .share-card {
+      background: rgba(22, 28, 44, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 36px 28px;
+      max-width: 520px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 95, 31, 0.15);
+      backdrop-filter: blur(20px);
+    }
+    .track-art-box {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255, 95, 31, 0.3), rgba(139, 92, 246, 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+      box-shadow: 0 12px 32px rgba(255, 95, 31, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .track-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      word-break: break-word;
+    }
+    .track-artist {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 28px;
+    }
+    .btn-open-app {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FF5F1F, #FF8C33);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 16px 28px;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255, 95, 31, 0.4);
+      transition: all 0.2s ease;
+      margin-bottom: 14px;
+    }
+    .btn-open-app:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 95, 31, 0.55);
+    }
+    .store-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .btn-store {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-playstore {
+      background: rgba(0, 245, 212, 0.12);
+      border: 1px solid rgba(0, 245, 212, 0.4);
+      color: #00F5D4;
+      font-weight: 700;
+    }
+    .btn-playstore:hover {
+      background: rgba(0, 245, 212, 0.22);
+      border-color: rgba(0, 245, 212, 0.7);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="index.html" class="brand" style="text-decoration: none;">
+        <div class="brand-icon">🎵</div>
+        <span>Melodrift</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#download">Download</a>
+        <a href="index.html" class="btn-nav">Get App</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="share-card">
+      <div class="badge" style="margin-bottom: 20px;">
+        <span>✨ Shared via Melodrift</span>
+      </div>
+
+      <div class="track-art-box" id="artBox">
+        🎶
+      </div>
+
+      <h1 class="track-title" id="trackTitle">Loading song…</h1>
+      <p class="track-artist" id="trackArtist">Please wait</p>
+
+      <a href="#" id="openAppBtn" class="btn-open-app">
+        <span>▶️ Open & Play in Melodrift</span>
+      </a>
+
+      <div style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">
+        Don't have Melodrift installed yet? Get it free:
+      </div>
+
+      <div class="store-buttons" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
+        <a href="https://play.google.com/store/apps/details?id=com.melodrift" target="_blank" class="btn-store btn-playstore">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="vertical-align: -2px; margin-right: 4px;"><path d="M3.6 1.8l12.7 10.2L3.6 22.2c-.4-.4-.6-1-.6-1.7V3.5c0-.7.2-1.3.6-1.7z" fill="#00D4FF"/><path d="M16.3 12L3.6 1.8c.2-.2.5-.3.9-.3.6 0 1.2.3 1.7.7l12.3 7-2.2 2.8z" fill="#00F5D4"/><path d="M18.5 9.2l2.7 1.5c1 .6 1 1.6 0 2.2l-2.7 1.5-2.6-2.4 2.6-2.8z" fill="#FFC107"/><path d="M16.3 12l2.2 2.8-12.3 7c-.5.4-1.1.7-1.7.7-.4 0-.7-.1-.9-.3L16.3 12z" fill="#FF5722"/></svg>Google Play</span>
+        </a>
+        <a href="https://github.com/wesoftcorp/melodrift-website/releases/download/v1.2.1/Melodrift-Release-v1.2.1.apk" class="btn-store">
+          <span>🤖 Download APK</span>
+        </a>
+        <a href="https://apps.microsoft.com/detail/9NTMFZ12Q80S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" class="btn-store">
+          <span>🪟 Windows</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const songId = params.get('id') || '';
+    const title = params.get('title') || 'Selected Track';
+    const artist = params.get('artist') || 'Melodrift Music';
+    const art = params.get('art') || '';
+
+    document.getElementById('trackTitle').textContent = title;
+    document.getElementById('trackArtist').textContent = artist;
+    document.title = `${title} - ${artist} | Melodrift`;
+
+    if (art && (art.startsWith('http://') || art.startsWith('https://'))) {
+      const artBox = document.getElementById('artBox');
+      artBox.style.padding = '0';
+      artBox.style.overflow = 'hidden';
+      artBox.innerHTML = `<img src="${art}" alt="${title}" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">`;
+    }
+
+    const deepLink = `melodrift://play?id=${encodeURIComponent(songId)}&title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`;
+    document.getElementById('openAppBtn').href = deepLink;
+
+    // Automatically attempt to launch app on mobile devices
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      setTimeout(() => {
+        window.location.href = deepLink;
+      }, 350);
+    }
+  </script>
+</body>
+</html>
