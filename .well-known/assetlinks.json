@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.melodrift",
+      "sha256_cert_fingerprints": [
+        "B3:C2:25:C6:4A:CC:7F:35:3D:12:A0:53:42:18:B8:2F:29:ED:7A:CB:5C:5C:37:99:5F:10:BF:25:5D:8F:13:F6"
+      ]
+    }
+  }
+]

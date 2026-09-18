@@ -168,30 +168,125 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const songId = params.get('id') || '';
-    const title = params.get('title') || 'Selected Track';
-    const artist = params.get('artist') || 'Melodrift Music';
-    const art = params.get('art') || '';
+    const token = params.get('s') || '';
+    let songId = params.get('id') || '';
+    let title = params.get('title') || '';
+    let artist = params.get('artist') || '';
+    let art = params.get('art') || '';
+    let dur = params.get('dur') || '';
+    let isPodcast = params.get('type') === 'podcast';
+    let feedUrl = params.get('feed') || '';
 
-    document.getElementById('trackTitle').textContent = title;
-    document.getElementById('trackArtist').textContent = artist;
-    document.title = `${title} - ${artist} | Melodrift`;
-
-    if (art && (art.startsWith('http://') || art.startsWith('https://'))) {
-      const artBox = document.getElementById('artBox');
-      artBox.style.padding = '0';
-      artBox.style.overflow = 'hidden';
-      artBox.innerHTML = `<img src="${art}" alt="${title}" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">`;
+    if (token) {
+      try {
+        let b64 = token.replace(/-/g, "+").replace(/_/g, "/");
+        while (b64.length % 4 !== 0) b64 += "=";
+        const binary = atob(b64);
+        const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+        const decoded = new TextDecoder().decode(bytes);
+        const parts = decoded.split('|');
+        if (parts.length > 0 && parts[0] === 'p') {
+          isPodcast = true;
+          songId = parts[1] || '';
+          feedUrl = parts[2] || '';
+          title = parts[3] || '';
+          artist = parts[4] || '';
+        } else if (parts.length > 0) {
+          songId = parts[0] || '';
+          dur = parts[1] || '';
+          title = parts[2] || '';
+          artist = parts[3] || '';
+        }
+      } catch (e) {
+        console.error('Failed to decode token:', e);
+      }
     }
 
-    const deepLink = `melodrift://play?id=${encodeURIComponent(songId)}&title=${encodeURIComponent(title)}&artist=${encodeURIComponent(artist)}`;
-    document.getElementById('openAppBtn').href = deepLink;
+    function renderTrack(t, a, img, d) {
+      document.getElementById('trackTitle').textContent = t || (isPodcast ? 'Selected Podcast' : 'Selected Track');
+      document.getElementById('trackArtist').textContent = a || (isPodcast ? 'Melodrift Podcasts' : 'Melodrift Music');
+      document.title = `${t || (isPodcast ? 'Podcast' : 'Listen')} - ${a || 'Melodrift'} | Melodrift`;
 
-    // Automatically attempt to launch app on mobile devices
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      setTimeout(() => {
-        window.location.href = deepLink;
-      }, 350);
+      if (img && (img.startsWith('http://') || img.startsWith('https://'))) {
+        const artBox = document.getElementById('artBox');
+        artBox.style.padding = '0';
+        artBox.style.overflow = 'hidden';
+        artBox.innerHTML = `<img src="${img}" alt="${t || 'Artwork'}" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">`;
+      }
+
+      const queryParts = [];
+      if (songId) queryParts.push(`id=${encodeURIComponent(songId)}`);
+      if (d || dur) queryParts.push(`dur=${encodeURIComponent(d || dur)}`);
+      if (t) queryParts.push(`title=${encodeURIComponent(t)}`);
+      if (a) queryParts.push(`artist=${encodeURIComponent(a)}`);
+      if (img) queryParts.push(`art=${encodeURIComponent(img)}`);
+      if (token) queryParts.push(`s=${encodeURIComponent(token)}`);
+      if (isPodcast) {
+        queryParts.push('type=podcast');
+        if (feedUrl) queryParts.push(`feed=${encodeURIComponent(feedUrl)}`);
+      }
+      const deepLink = `melodrift://play?${queryParts.join('&')}`;
+      document.getElementById('openAppBtn').href = deepLink;
+      return deepLink;
+    }
+
+    if (title && title !== 'Selected Track') {
+      const deepLink = renderTrack(title, artist, art, dur);
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        setTimeout(() => {
+          window.location.href = deepLink;
+        }, 350);
+      }
+      if (!art && songId && !isPodcast) {
+        fetch(`https://melodrift-api.vercel.app/api/songs?ids=${encodeURIComponent(songId)}`)
+          .then(res => res.json())
+          .catch(() => fetch(`https://melodrift.softcorpllc.workers.dev/api/songs?ids=${encodeURIComponent(songId)}`).then(r => r.json()))
+          .then(json => {
+            if (json && json.data && json.data.length > 0) {
+              const item = json.data[0];
+              if (item.image && item.image.length > 0) {
+                const last = item.image[item.image.length - 1];
+                const newArt = (typeof last === 'object' ? (last.url || last.link) : last) || '';
+                if (newArt) renderTrack(title, artist, newArt, dur);
+              }
+            }
+          })
+          .catch(() => {});
+      }
+    } else if (songId) {
+      document.getElementById('trackTitle').textContent = 'Loading details…';
+      document.getElementById('trackArtist').textContent = isPodcast ? 'Melodrift Podcasts' : 'Melodrift Music';
+
+      fetch(`https://melodrift-api.vercel.app/api/songs?ids=${encodeURIComponent(songId)}`)
+        .then(res => res.json())
+        .catch(() => fetch(`https://melodrift.softcorpllc.workers.dev/api/songs?ids=${encodeURIComponent(songId)}`).then(r => r.json()))
+        .then(json => {
+          if (json && json.data && json.data.length > 0) {
+            const item = json.data[0];
+            title = item.name || title;
+            if (item.artists && item.artists.primary && item.artists.primary.length > 0) {
+              artist = item.artists.primary.map(p => p.name).join(', ');
+            }
+            if (item.image && item.image.length > 0) {
+              const last = item.image[item.image.length - 1];
+              art = (typeof last === 'object' ? (last.url || last.link) : last) || art;
+            }
+            if (item.duration) {
+              dur = String(item.duration);
+            }
+          }
+        })
+        .catch(() => {})
+        .finally(() => {
+          const deepLink = renderTrack(title || 'Selected Track', artist || 'Melodrift Music', art, dur);
+          if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            setTimeout(() => {
+              window.location.href = deepLink;
+            }, 350);
+          }
+        });
+    } else {
+      renderTrack('Selected Track', 'Melodrift Music', art, dur);
     }
   </script>
 </body>
