@@ -435,7 +435,81 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
+}
+
+/* ── Live Technical Specs Strip ───────────────────────────────────────── */
+.tech-specs-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 36px auto 50px;
+  padding: 18px 24px;
+  background: rgba(14, 20, 32, 0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.tech-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.tech-spec-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.tech-spec-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-spec-value {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.2px;
+}
+
+.tech-spec-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Category Section Divider ─────────────────────────────────────────── */
+.category-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 24px;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent);
 }
 
 .feature-card {
@@ -447,6 +521,8 @@ a {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card::before {
@@ -472,6 +548,24 @@ a {
   opacity: 1;
 }
 
+.feature-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
 .feature-icon {
   width: 52px;
   height: 52px;
@@ -482,7 +576,6 @@ a {
   justify-content: center;
   font-size: 24px;
   color: var(--primary);
-  margin-bottom: 22px;
   border: 1px solid rgba(0, 210, 255, 0.2);
 }
 
@@ -497,6 +590,176 @@ a {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.65;
+}
+
+/* ── Feature Highlight Banner (3D Cascade Spotlight) ───────────────────── */
+.highlight-banner {
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.12) 0%, rgba(14, 20, 32, 0.85) 50%, rgba(129, 140, 248, 0.12) 100%);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-xl);
+  padding: 44px 48px;
+  margin: 40px 0 80px;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 210, 255, 0.12);
+}
+
+.highlight-banner-content h3 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.highlight-banner-content p {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.highlight-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlight-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.highlight-bullets li .check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 210, 255, 0.18);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.highlight-graphic {
+  background: rgba(7, 9, 14, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.highlight-graphic-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.highlight-graphic-item .item-icon {
+  font-size: 20px;
+}
+
+.highlight-graphic-item .item-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  display: block;
+}
+
+/* ── Comparison Table Section ─────────────────────────────────────────── */
+.comparison-section {
+  margin: 60px 0 90px;
+}
+
+.comparison-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14.5px;
+}
+
+.comparison-table th {
+  background: rgba(0, 210, 255, 0.06);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.comparison-table th.col-brand {
+  color: var(--primary);
+  background: rgba(0, 210, 255, 0.14);
+  border-bottom: 2px solid var(--primary);
+}
+
+.comparison-table td.col-brand {
+  background: rgba(0, 210, 255, 0.04);
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table tr:hover td.col-brand {
+  background: rgba(0, 210, 255, 0.08);
+}
+
+.pill-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #34D399;
+  font-weight: 700;
+}
+
+.pill-cross {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #F87171;
+  font-weight: 500;
 }
 
 /* ── Download Section ──────────────────────────────────────────────────── */
@@ -648,5 +911,24 @@ a {
   }
   .download-cards {
     grid-template-columns: 1fr;
+  }
+  .highlight-banner {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+  }
+  .tech-specs-strip {
+    grid-template-columns: 1fr 1fr;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .tech-specs-strip {
+    grid-template-columns: 1fr;
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 14px;
+    font-size: 13px;
   }
 }

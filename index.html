@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melodrift — Let the Music Drift | Lossless, Ad-Free & Cloud Synced</title>
-  <meta name="description" content="Melodrift is a state-of-the-art music streaming client and audio player for Android & Windows. Stream high-fidelity audio with sub-300ms playback, cloud sync, and offline downloads.">
+  <meta name="description" content="Melodrift is a state-of-the-art music streaming client and audio player for Android & Windows. Stream high-fidelity audio with sub-300ms playback, 3D perspective cascades, studio equalizer with acoustic headroom protection, cloud sync, and offline downloads.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; base-uri 'self'; form-action 'none';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="stylesheet" href="/style.css?v=2.1">
+  <link rel="stylesheet" href="style.css?v=2.2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/favicon.png?v=2.1">
+  <link rel="icon" type="image/png" href="favicon.png?v=2.1">
 </head>
 <body>
 
@@ -26,6 +26,8 @@
       <nav class="nav-links">
         <a href="#showcase">Showcase</a>
         <a href="#features">Features</a>
+        <a href="#experience">3D Stage</a>
+        <a href="#comparison">Why Melodrift</a>
         <a href="#download">Download</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
@@ -46,7 +48,7 @@
         <span class="gradient-text">Lossless, Ultra-Fast & Cloud Synced.</span>
       </h1>
       <p class="hero-subtitle">
-        Stream millions of songs and podcasts with sub-300ms playback, intelligent deduplication, studio equalizer, offline listening, and cross-platform cloud sync across Android and Windows.
+        Stream millions of songs and podcasts with sub-300ms playback, hardware-accelerated 3D cascade stage, studio-grade equalizer with acoustic headroom protection, and cross-platform cloud sync across Android and Windows.
       </p>
 
       <!-- Store Buttons CTA Group -->
@@ -76,77 +78,322 @@
             <div class="btn-maintext">Microsoft Store</div>
           </div>
         </a>
+      </div>
 
+      <!-- Live Technical Specs Strip -->
+      <div class="tech-specs-strip">
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">⚡</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">&lt; 300ms Latency</span>
+            <span class="tech-spec-label">Instant Playback Pipeline</span>
+          </div>
+        </div>
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">🎵</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">Lossless 320 kbps</span>
+            <span class="tech-spec-label">CD-Grade Audio Fidelity</span>
+          </div>
+        </div>
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">🌀</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">3D Perspective Stage</span>
+            <span class="tech-spec-label">Fluid Cascade Carousels</span>
+          </div>
+        </div>
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">🎚️</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">10-Band Studio EQ</span>
+            <span class="tech-spec-label">OEM Acoustic Headroom</span>
+          </div>
+        </div>
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">🚫</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">100% Ad-Free</span>
+            <span class="tech-spec-label">Zero Audio Ads or Paywalls</span>
+          </div>
+        </div>
       </div>
 
       <!-- Interactive App Showcase / Screenshots -->
       <div id="showcase" class="showcase-section">
         <div class="showcase-container">
           <div class="showcase-tabs">
-            <button class="tab-btn active" onclick="switchTab('home')">🏠 Home & Daily Mix</button>
-            <button class="tab-btn" onclick="switchTab('browse')">🔍 Browse & Discover</button>
-            <button class="tab-btn" onclick="switchTab('player')">🎵 Studio Now Playing</button>
-            <button class="tab-btn" onclick="switchTab('library')">📚 Cloud Library</button>
+            <button class="tab-btn active" onclick="switchTab('home', this)">🏠 Home & 3D Cascade</button>
+            <button class="tab-btn" onclick="switchTab('browse', this)">🔍 Browse & Search</button>
+            <button class="tab-btn" onclick="switchTab('player', this)">🎵 Studio Player</button>
+            <button class="tab-btn" onclick="switchTab('podcasts', this)">🎙️ Podcasts Hub</button>
+            <button class="tab-btn" onclick="switchTab('library', this)">📚 Cloud Library</button>
+            <button class="tab-btn" onclick="switchTab('settings', this)">⚙️ Audio Settings</button>
           </div>
           <div class="showcase-content">
             <div id="slide-home" class="showcase-slide active">
-              <img src="assets/screenshots/Home.png" alt="Melodrift Home Screen" class="screenshot-frame">
+              <img src="assets/screenshots/Home.png" alt="Melodrift Home Screen with 3D Cascade" class="screenshot-frame">
             </div>
             <div id="slide-browse" class="showcase-slide">
-              <img src="assets/screenshots/Browse.png" alt="Melodrift Browse Screen" class="screenshot-frame">
+              <img src="assets/screenshots/Browse.png" alt="Melodrift Browse and Multi-Source Search" class="screenshot-frame">
             </div>
             <div id="slide-player" class="showcase-slide">
-              <img src="assets/screenshots/Player.png" alt="Melodrift Audio Player" class="screenshot-frame">
+              <img src="assets/screenshots/Player.png" alt="Melodrift Studio Audio Player" class="screenshot-frame">
+            </div>
+            <div id="slide-podcasts" class="showcase-slide">
+              <img src="assets/screenshots/Podcasts.png" alt="Melodrift Podcasts Hub and Shows" class="screenshot-frame">
             </div>
             <div id="slide-library" class="showcase-slide">
-              <img src="assets/screenshots/Library.png" alt="Melodrift Music Library" class="screenshot-frame">
+              <img src="assets/screenshots/Library.png" alt="Melodrift Cloud Synced Music Library" class="screenshot-frame">
+            </div>
+            <div id="slide-settings" class="showcase-slide">
+              <img src="assets/screenshots/Settings.png" alt="Melodrift Audio Settings and Equalizer" class="screenshot-frame">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" style="padding: 40px 0 60px;">
+    <!-- 3D Cascade Experience Spotlight Banner -->
+    <section id="experience">
+      <div class="highlight-banner">
+        <div class="highlight-banner-content">
+          <div class="category-badge" style="margin-bottom: 14px;">Next-Gen Visual Craft</div>
+          <h3>Continuous 3D Perspective Cascade</h3>
+          <p>Music discovery designed with depth and tactile elegance. Melodrift features a custom hardware-accelerated 3D perspective stage with real-time finger physics, fluid dynamic rotation, and seamless endless cycling across both Home and Podcast screens.</p>
+          <ul class="highlight-bullets">
+            <li><span class="check-icon">✓</span> <span>True 3D perspective matrix with inward depth rotation and Z-depth receding</span></li>
+            <li><span class="check-icon">✓</span> <span>Tactile drag physics tracking 1:1 with your finger in real time</span></li>
+            <li><span class="check-icon">✓</span> <span>Spotlight focus transitions with ambient gradient bloom and glow shadows</span></li>
+            <li><span class="check-icon">✓</span> <span>Loop-immune auto-advance with 60/120fps hardware acceleration</span></li>
+          </ul>
+        </div>
+        <div class="highlight-graphic">
+          <div class="highlight-graphic-item">
+            <span class="item-icon">🔥</span>
+            <div>
+              <span>Melodrift Trending Cascade</span>
+              <span class="item-meta">Live Spotify Top 50 singles & top chart tracks</span>
+            </div>
+          </div>
+          <div class="highlight-graphic-item">
+            <span class="item-icon">🎙️</span>
+            <div>
+              <span>Podcast Showcase Stage</span>
+              <span class="item-meta">3D angled cards for top audio shows and creators</span>
+            </div>
+          </div>
+          <div class="highlight-graphic-item">
+            <span class="item-icon">⚡</span>
+            <div>
+              <span>Zero-Stutter Mathematical Stage</span>
+              <span class="item-meta">Continuous cyclic offset interpolation with zero rewinds</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features Section -->
+    <section id="features" style="padding: 20px 0 60px;">
       <h2 class="section-title">Engineered for Pure Sound</h2>
-      <p class="section-subtitle">A native, modern music client crafted with sub-300ms speed, strict privacy, and rich aesthetics.</p>
+      <p class="section-subtitle">A native, modern music client crafted with sub-300ms speed, studio acoustics, strict privacy, and rich aesthetics.</p>
+
+      <!-- Category 1: Audiophile Streaming & Search -->
+      <div class="category-divider">
+        <span class="category-badge">🎧 Audiophile Engine & Streaming Precision</span>
+        <div class="category-line"></div>
+      </div>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Instant Audio Engine (&lt; 300ms)</h3>
-          <p>Zero-delay playback initialization with in-memory caching and intelligent background track pre-fetching. No buffering, no waiting.</p>
+          <div class="feature-card-header">
+            <div class="feature-icon">⚡</div>
+            <span class="card-tag">Ultra-Low Latency</span>
+          </div>
+          <h3>Sub-300ms Playback Engine</h3>
+          <p>Zero-delay playback initialization with in-memory caching and proactive audio segment buffering. Tap any song and enjoy instant audio with zero buffering wheels.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🎚️</div>
-          <h3>Studio-Grade Equalizer</h3>
-          <p>Fine-tune frequencies with customizable multi-band equalization, dynamic bass boost, and precision acoustic presets for any headphones.</p>
+          <div class="feature-card-header">
+            <div class="feature-icon">🎵</div>
+            <span class="card-tag">Lossless 320 kbps</span>
+          </div>
+          <h3>High-Fidelity Audio Streams</h3>
+          <p>Crisp, uncompressed 320 kbps CD-quality audio streaming. Intelligent adaptive bitrate scaling automatically preserves smooth, dropout-free sound on cellular and Wi-Fi networks.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🔄</div>
+          <div class="feature-card-header">
+            <div class="feature-icon">🌐</div>
+            <span class="card-tag">Multi-Source</span>
+          </div>
+          <h3>Multi-Source Music Convergence</h3>
+          <p>Direct access to millions of tracks aggregated from JioSaavn, Spotify Top 50 & Viral charts, SoundCloud Lo-Fi & chill mixes, and YouTube Music with seamless multi-tier fallback.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🎯</div>
+            <span class="card-tag">AI Assisted Queues</span>
+          </div>
+          <h3>Intelligent Search & Deduplication</h3>
+          <p>Token-based fuzzy matching eliminates annoying duplicate uploads, cover spam, and low-quality noise. Search by song, artist, album, or voice to get pristine discographies.</p>
+        </div>
+      </div>
+
+      <!-- Category 2: Acoustic Engineering & Discovery -->
+      <div class="category-divider">
+        <span class="category-badge">🎚️ Acoustic Craft, Lyrics & Discovery</span>
+        <div class="category-line"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🎚️</div>
+            <span class="card-tag">Safe DSP Headroom</span>
+          </div>
+          <h3>Studio Equalizer & DSP Safety</h3>
+          <p>Fine-tune frequencies with customizable 10-band equalization, dynamic bass boost, and custom acoustic presets. Built-in acoustic headroom protection prevents native audio crashes on Xiaomi and OEM ROMs.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🌀</div>
+            <span class="card-tag">60/120fps Stage</span>
+          </div>
+          <h3>Hardware 3D Cascade Stages</h3>
+          <p>Fluid, tactile carousel cards angled in 3D perspective. Drag cards smoothly under your finger, tap side cards to glide into focus, or let the loop-immune auto-advance showcase trending hits.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🎙️</div>
+            <span class="card-tag">Spoken Word Hub</span>
+          </div>
+          <h3>Dedicated Podcasts Experience</h3>
+          <p>Explore curated audio shows, complete episode catalogues, playback progress resumption, episode counters, and dedicated podcast 3D cascade shelves.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">📜</div>
+            <span class="card-tag">Live Sync & Translate</span>
+          </div>
+          <h3>Synchronized Live Lyrics</h3>
+          <p>Sing along with millisecond-synced scrolling lyrics. Includes on-device AI translations for regional and international tracks so you always understand the music you love.</p>
+        </div>
+      </div>
+
+      <!-- Category 3: Cloud Continuity, Freedom & Privacy -->
+      <div class="category-divider">
+        <span class="category-badge">☁️ Cloud Continuity, Freedom & Privacy</span>
+        <div class="category-line"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🔄</div>
+            <span class="card-tag">Firebase Cloud Sync</span>
+          </div>
           <h3>Realtime Cloud Library Sync</h3>
-          <p>Sign in securely with Google SSO. Your playlists, custom favorites, and listening history sync effortlessly across Android and Windows devices.</p>
+          <p>Sign in securely with Google SSO. Your custom playlists, favorite tracks, and listening history sync effortlessly across Android phones, tablets, and Windows PCs.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">👤</div>
-          <h3>Frictionless Guest Mode</h3>
-          <p>Jump straight into streaming music and podcasts instantly. No registration or mandatory login required to enjoy the full audio experience.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Smart Track Deduplication</h3>
-          <p>Intelligent multi-source search aggregation with automated duplicate filtering ensures your search results and queues stay clean and pristine.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📥</div>
+          <div class="feature-card-header">
+            <div class="feature-icon">📥</div>
+            <span class="card-tag">16KB Page-Size Compliant</span>
+          </div>
           <h3>Lossless Offline Downloads</h3>
-          <p>Save tracks locally in high fidelity for offline listening while traveling without cellular data usage.</p>
+          <p>Save tracks locally in high fidelity for offline listening while traveling without cellular data usage. Powered by high-speed Isar database storage fully compliant with Android 15 & 16.</p>
         </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🌙</div>
+            <span class="card-tag">Decibel Fadeout</span>
+          </div>
+          <h3>Smart Sleep Timer</h3>
+          <p>Drift off peacefully with customizable sleep timers (15m, 30m, 45m, 1h, or End of Track). Features gentle volume attenuation that softly fades audio before stopping.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🛡️</div>
+            <span class="card-tag">Zero Ads · Guest Mode</span>
+          </div>
+          <h3>100% Ad-Free & Frictionless</h3>
+          <p>No audio ads, no commercial interruptions, no paywalls, and no mandatory login required. Jump straight into the full listening experience as a guest with complete privacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Melodrift / Comparison Matrix Section -->
+    <section id="comparison" class="comparison-section">
+      <h2 class="section-title">Why Choose Melodrift?</h2>
+      <p class="section-subtitle">See how Melodrift compares against generic music streaming platforms.</p>
+
+      <div class="comparison-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-brand">Melodrift</th>
+              <th>Generic Streaming Apps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ad-Free Playback</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ 100% Ad-Free Forever</span></td>
+              <td><span class="pill-cross">✗ Frequent Audio & Video Ads</span></td>
+            </tr>
+            <tr>
+              <td><strong>Guest Mode (No Sign-Up)</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Instant One-Tap Play</span></td>
+              <td><span class="pill-cross">✗ Mandatory Account Wall</span></td>
+            </tr>
+            <tr>
+              <td><strong>Audio Streaming Fidelity</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Lossless up to 320 kbps</span></td>
+              <td><span class="pill-cross">✗ Compressed 96-160k (Paid Tier for 320k)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hardware Equalizer & Headroom</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ 10-Band EQ + OEM Headroom Safe</span></td>
+              <td><span class="pill-cross">✗ Basic 5-band or paywalled</span></td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Source Music Engine</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ JioSaavn · Spotify · SoundCloud</span></td>
+              <td><span class="pill-cross">✗ Locked to single vendor catalog</span></td>
+            </tr>
+            <tr>
+              <td><strong>Visual Discovery Experience</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Hardware 3D Perspective Cascades</span></td>
+              <td><span class="pill-cross">✗ Flat, static 2D grid carousels</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cross-Platform Cloud Sync</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Real-time Android & Windows Sync</span></td>
+              <td><span class="pill-cross">✗ Platform siloed or delayed sync</span></td>
+            </tr>
+            <tr>
+              <td><strong>Offline Audio Downloads</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ High-Quality Offline Local Storage</span></td>
+              <td><span class="pill-cross">✗ Requires Monthly Subscription</span></td>
+            </tr>
+            <tr>
+              <td><strong>User Privacy & Tracking</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Strict Privacy, No Ad Profiling</span></td>
+              <td><span class="pill-cross">✗ Heavy behavioral ad tracking</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -161,9 +408,9 @@
           <div class="download-tag">Recommended for Android</div>
           <div class="download-card-icon">🤖</div>
           <h3>Google Play Store</h3>
-          <div class="platform-version">Android 8.0 to Android 17</div>
+          <div class="platform-version">Android 8.0 to Android 16+</div>
           <p class="platform-desc">
-            Official release with verified automatic background updates, battery-optimized background audio service, and Google Play Protect verification.
+            Official production release with verified automatic background updates, battery-optimized background audio service, 16KB page-size compliance, and Google Play Protect certification.
           </p>
           <a href="https://play.google.com/store/apps/details?id=com.melodrift" target="_blank" rel="noopener noreferrer" class="btn-primary-play" style="width: 100%; justify-content: center;">
             Install from Google Play
@@ -177,7 +424,7 @@
           <h3>Microsoft Store</h3>
           <div class="platform-version">Windows 10 & 11 (64-bit)</div>
           <p class="platform-desc">
-            Native 64-bit desktop build with hardware audio acceleration, system media controls (SMTC) integration, and automatic store updating.
+            Native 64-bit desktop build with hardware audio acceleration, system media transport controls (SMTC) integration, keyboard media shortcuts, and automatic Microsoft Store updating.
           </p>
           <a href="https://apps.microsoft.com/detail/9NTMFZ12Q80S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer" class="btn-secondary-store" style="width: 100%; justify-content: center;">
             Get on Microsoft Store
@@ -187,7 +434,7 @@
 
       <!-- Policy & Distribution Transparency Notice -->
       <div class="policy-notice">
-        <strong>Distribution & Security Compliance Notice:</strong> Melodrift is officially distributed through Google Play Store and Microsoft Store. Packages installed via Google Play are signed and verified by Google Play Protect for your device security. Melodrift is 100% ad-free and respects user privacy.
+        <strong>Distribution & Security Compliance Notice:</strong> Melodrift is officially distributed through the Google Play Store and Microsoft Store. Packages installed via Google Play are signed and verified by Google Play Protect for your device security. Melodrift is 100% ad-free, respecting your device performance and audio purity.
       </div>
     </section>
   </main>
