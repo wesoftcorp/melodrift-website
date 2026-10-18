@@ -320,42 +320,13 @@
       </div>
 
       <div class="features-grid">
-        <div class="feature-card feature-card-eq reveal-on-scroll">
+        <div class="feature-card">
           <div class="feature-card-header">
             <div class="feature-icon">🎚️</div>
             <span class="card-tag">Safe DSP Headroom</span>
           </div>
           <h3>Studio Equalizer & DSP Safety</h3>
           <p>Fine-tune frequencies with customizable 10-band equalization, dynamic bass boost, and custom acoustic presets. Built-in acoustic headroom protection prevents native audio crashes on Xiaomi and OEM ROMs.</p>
-
-          <!-- Interactive Equalizer Deck -->
-          <div class="eq-interactive-deck">
-            <div class="eq-deck-top">
-              <div class="eq-headroom-badge">
-                <span class="headroom-indicator"></span>
-                <span>Acoustic Headroom Safe: <strong id="eq-headroom-val">0.0 dB TP</strong></span>
-              </div>
-              <div class="eq-presets-group">
-                <button type="button" class="eq-preset-btn active" onclick="setEqPreset('audiophile', this)">Audiophile Pure</button>
-                <button type="button" class="eq-preset-btn" onclick="setEqPreset('bass', this)">Bass Boost</button>
-                <button type="button" class="eq-preset-btn" onclick="setEqPreset('vocal', this)">Vocal Air</button>
-                <button type="button" class="eq-preset-btn" onclick="setEqPreset('electronic', this)">Electronic</button>
-              </div>
-            </div>
-
-            <div class="eq-bars-visualizer" id="eq-visualizer">
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 50%;"></div></div><span class="eq-freq">32</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 52%;"></div></div><span class="eq-freq">64</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 54%;"></div></div><span class="eq-freq">125</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 50%;"></div></div><span class="eq-freq">250</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 48%;"></div></div><span class="eq-freq">500</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 52%;"></div></div><span class="eq-freq">1k</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 55%;"></div></div><span class="eq-freq">2k</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 60%;"></div></div><span class="eq-freq">4k</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 62%;"></div></div><span class="eq-freq">8k</span></div>
-              <div class="eq-col"><div class="eq-bar-track"><div class="eq-bar-fill" style="height: 58%;"></div></div><span class="eq-freq">16k</span></div>
-            </div>
-          </div>
         </div>
 
         <div class="feature-card">
@@ -709,33 +680,6 @@
       restartTimer();
     }
 
-    // ── Equalizer Presets Interactive Engine ────────────────────────────────
-    const eqPresets = {
-      audiophile: { heights: [50, 52, 54, 50, 48, 52, 55, 60, 62, 58], headroom: '0.0 dB TP' },
-      bass: { heights: [92, 88, 76, 58, 45, 42, 48, 54, 58, 52], headroom: '-0.4 dB TP' },
-      vocal: { heights: [38, 42, 48, 56, 70, 84, 82, 74, 60, 52], headroom: '-0.2 dB TP' },
-      electronic: { heights: [86, 78, 62, 46, 44, 52, 68, 80, 88, 82], headroom: '-0.3 dB TP' }
-    };
-
-    function setEqPreset(presetName, btn) {
-      const preset = eqPresets[presetName];
-      if (!preset) return;
-
-      document.querySelectorAll('.eq-preset-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      const fills = document.querySelectorAll('#eq-visualizer .eq-bar-fill');
-      fills.forEach((fill, i) => {
-        if (preset.heights[i] !== undefined) {
-          fill.style.height = preset.heights[i] + '%';
-        }
-      });
-
-      const headroomLabel = document.getElementById('eq-headroom-val');
-      if (headroomLabel) {
-        headroomLabel.textContent = preset.headroom;
-      }
-    }
 
     // ── 3D Cursor Tilt & Specular Glare ─────────────────────────────────────
     function initTiltEffect() {
