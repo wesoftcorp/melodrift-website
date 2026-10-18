@@ -23,16 +23,27 @@
         <img src="logo_emblem.png" alt="Melodrift Logo" class="brand-logo">
         <span>Melodrift</span>
       </a>
-      <nav class="nav-links">
-        <a href="#showcase">Showcase</a>
-        <a href="#features">Features</a>
-        <a href="#experience">3D Stage</a>
-        <a href="#comparison">Why Melodrift</a>
-        <a href="#download">Download</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="#download" class="btn-nav">Get Melodrift</a>
-      </nav>
+      <div class="nav-right-cluster">
+        <nav class="nav-links">
+          <a href="#showcase">Showcase</a>
+          <a href="#features">Features</a>
+          <a href="#experience">3D Stage</a>
+          <a href="#comparison">Why Melodrift</a>
+          <a href="#download">Download</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="#download" class="btn-nav">Get Melodrift</a>
+        </nav>
+
+        <!-- Day / Night Mode Toggle Switch -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Day / Night Mode" title="Toggle Day / Night Mode">
+          <span class="theme-toggle-track">
+            <span class="theme-icon icon-sun">☀️</span>
+            <span class="theme-icon icon-moon">🌙</span>
+            <span class="theme-toggle-thumb"></span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -772,7 +783,29 @@
       });
     }
 
+    // ── Day / Night Mode Theme Engine ───────────────────────────────────────
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const savedTheme = localStorage.getItem('melodrift-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'dark');
+      
+      document.documentElement.setAttribute('data-theme', initialTheme);
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme') || 'dark';
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('melodrift-theme', next);
+        });
+      }
+    }
+
+    initTheme();
+
     document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
       initCascadeStage();
       initTiltEffect();
       initScrollReveal();
