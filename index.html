@@ -8,7 +8,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; base-uri 'self'; form-action 'none';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="stylesheet" href="style.css?v=2.4">
+  <link rel="stylesheet" href="style.css?v=2.5">
   <script>
     (function() {
       try {
@@ -41,6 +41,8 @@
         <nav class="nav-links">
           <a href="#experience">3D Stage</a>
           <a href="#features">Features</a>
+          <a href="#podcasts">Podcasts</a>
+          <a href="#shortcuts">Shortcuts</a>
           <a href="#comparison">Why Melodrift</a>
           <a href="#download">Download</a>
           <a href="privacy.html">Privacy</a>
@@ -77,7 +79,7 @@
           <span class="live-eq-bar bar-3"></span>
           <span class="live-eq-bar bar-4"></span>
         </span>
-        <span>Melodrift v1.3.0 is Now Live • Lossless 320 kbps Streaming</span>
+        <span>Melodrift v1.3.0 is Live • Sub-Second Latency & 700+ Shows</span>
         <span class="badge-pill">60/120 FPS</span>
       </div>
       <h1 class="hero-title">
@@ -85,7 +87,7 @@
         <span class="gradient-text">Lossless, Ultra-Fast & Cloud Synced.</span>
       </h1>
       <p class="hero-subtitle">
-        Stream millions of songs and podcasts with sub-300ms playback, hardware-accelerated 3D cascade stage, studio-grade equalizer with acoustic headroom protection, and cross-platform cloud sync across Android and Windows.
+        Stream millions of songs and 700+ podcasts with sub-second playback, hardware-accelerated 3D cascade stage, studio-grade equalizer with OEM acoustic headroom protection, full Windows keyboard shortcuts with smart HUD, and cross-platform cloud sync across Android and Windows.
       </p>
 
       <!-- Store Buttons CTA Group -->
@@ -125,29 +127,36 @@
             <span class="live-ping-wrap"><span class="live-ping-ring"></span><span class="live-ping-circle"></span></span>
           </div>
           <div class="tech-spec-data">
-            <span class="tech-spec-value">&lt; 300ms Latency</span>
-            <span class="tech-spec-label">Instant Playback Pipeline</span>
+            <span class="tech-spec-value">&lt; 300ms Fast Path</span>
+            <span class="tech-spec-label">Sub-Second Audio Pipeline</span>
           </div>
         </div>
         <div class="tech-spec-item">
           <div class="tech-spec-icon">🎵</div>
           <div class="tech-spec-data">
             <span class="tech-spec-value">Lossless 320 kbps</span>
-            <span class="tech-spec-label">CD-Grade Audio Fidelity</span>
+            <span class="tech-spec-label">Adaptive Bitrate Switcher</span>
           </div>
         </div>
         <div class="tech-spec-item">
-          <div class="tech-spec-icon">🌀</div>
+          <div class="tech-spec-icon">🎙️</div>
           <div class="tech-spec-data">
-            <span class="tech-spec-value">3D Perspective Stage</span>
-            <span class="tech-spec-label">Fluid Cascade Carousels</span>
+            <span class="tech-spec-value">700+ Audio Shows</span>
+            <span class="tech-spec-label">12 Shelves & [ ALL | HI | EN ]</span>
           </div>
         </div>
         <div class="tech-spec-item">
           <div class="tech-spec-icon">🎚️</div>
           <div class="tech-spec-data">
-            <span class="tech-spec-value">10-Band Studio EQ</span>
-            <span class="tech-spec-label">OEM Acoustic Headroom</span>
+            <span class="tech-spec-value">10 Studio Presets</span>
+            <span class="tech-spec-label">5-Band EQ & OEM Headroom</span>
+          </div>
+        </div>
+        <div class="tech-spec-item">
+          <div class="tech-spec-icon">⌨️</div>
+          <div class="tech-spec-data">
+            <span class="tech-spec-value">Windows Shortcuts</span>
+            <span class="tech-spec-label">Smart HUD & SMTC Sync</span>
           </div>
         </div>
         <div class="tech-spec-item">
@@ -247,11 +256,11 @@
     <!-- Detailed Features Section -->
     <section id="features" style="padding: 20px 0 60px;">
       <h2 class="section-title">Engineered for Pure Sound</h2>
-      <p class="section-subtitle">A native, modern music client crafted with sub-300ms speed, studio acoustics, strict privacy, and rich aesthetics.</p>
+      <p class="section-subtitle">A native, modern music client crafted with sub-second speed, studio acoustics, 700+ podcast shows, desktop shortcuts, and strict privacy.</p>
 
       <!-- Category 1: Audiophile Streaming & Search -->
       <div class="category-divider">
-        <span class="category-badge">🎧 Audiophile Engine & Streaming Precision</span>
+        <span class="category-badge">🎧 Audiophile Engine & Ultra-Fast Streaming</span>
         <div class="category-line"></div>
       </div>
 
@@ -261,8 +270,8 @@
             <div class="feature-icon">⚡</div>
             <span class="card-tag">Ultra-Low Latency</span>
           </div>
-          <h3>Sub-300ms Playback Engine</h3>
-          <p>Zero-delay playback initialization with in-memory caching and proactive audio segment buffering. Tap any song and enjoy instant audio with zero buffering wheels.</p>
+          <h3>Sub-Second Fast-Path Audio Engine</h3>
+          <p>Pre-resolved direct CDN streaming paths eliminate round-trip re-resolution stalls. Concurrently races streaming worker endpoints with keep-alive socket reuse for immediate, uninterrupted audio onset.</p>
         </div>
 
         <div class="feature-card">
@@ -270,8 +279,8 @@
             <div class="feature-icon">🎵</div>
             <span class="card-tag">Lossless 320 kbps</span>
           </div>
-          <h3>High-Fidelity Audio Streams</h3>
-          <p>Crisp, uncompressed 320 kbps CD-quality audio streaming. Intelligent adaptive bitrate scaling automatically preserves smooth, dropout-free sound on cellular and Wi-Fi networks.</p>
+          <h3>Lossless Fidelity & Bitrate Switcher</h3>
+          <p>Crisp, uncompressed 320 kbps CD-quality audio streaming. Includes four user-selectable fidelity modes (Auto, High 320k, Normal 160k, and Low 96k Data Saver) tailored for any cellular or Wi-Fi network.</p>
         </div>
 
         <div class="feature-card">
@@ -279,23 +288,23 @@
             <div class="feature-icon">🌐</div>
             <span class="card-tag">Universal Catalog</span>
           </div>
-          <h3>Global Music Index & Smart Streams</h3>
-          <p>Instant access to over 100+ million global songs, viral hits, lo-fi chill mixes, and regional favorites powered by an intelligent multi-tier resolution network.</p>
+          <h3>100M+ Global Index & Smart Streams</h3>
+          <p>Instant access to over 100+ million global songs, viral hits, lo-fi chill mixes, Bollywood melodies, and regional discographies powered by an intelligent multi-tier resolution network with AI deduplication.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card-header">
             <div class="feature-icon">🎯</div>
-            <span class="card-tag">AI Assisted Queues</span>
+            <span class="card-tag">Seamless Transitions</span>
           </div>
-          <h3>Intelligent Search & Deduplication</h3>
-          <p>Token-based fuzzy matching eliminates annoying duplicate uploads, cover spam, and low-quality noise. Search by song, artist, album, or voice to get pristine discographies.</p>
+          <h3>Gapless Playback & 500ms Prefetching</h3>
+          <p>Proactive 500ms sequence buffering pre-fetches upcoming tracks in your queue before the current song concludes, guaranteeing fluid, gapless transitions without sudden silent pauses.</p>
         </div>
       </div>
 
       <!-- Category 2: Acoustic Engineering & Discovery -->
       <div class="category-divider">
-        <span class="category-badge">🎚️ Acoustic Craft, Lyrics & Discovery</span>
+        <span class="category-badge">🎚️ Acoustic Craft, Studio EQ, Lyrics & Speed</span>
         <div class="category-line"></div>
       </div>
 
@@ -303,41 +312,90 @@
         <div class="feature-card">
           <div class="feature-card-header">
             <div class="feature-icon">🎚️</div>
+            <span class="card-tag">Studio Equalizer</span>
+          </div>
+          <h3>10 Studio Presets & 5-Band Equalizer</h3>
+          <p>Master your sound with 10 hand-tuned genre acoustic profiles (Bass Boost, Acoustic, Rock, Pop, Jazz, Electronic, Hip-Hop, Classical, Vocal, Flat) plus 5 custom frequency sliders (60Hz to 14kHz) with dynamic Bass Boost.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🛡️</div>
             <span class="card-tag">Safe DSP Headroom</span>
           </div>
-          <h3>Studio Equalizer & DSP Safety</h3>
-          <p>Fine-tune frequencies with customizable 10-band equalization, dynamic bass boost, and custom acoustic presets. Built-in acoustic headroom protection prevents native audio crashes on Xiaomi and OEM ROMs.</p>
+          <h3>OEM Acoustic Headroom Protection</h3>
+          <p>Built-in intelligent DSP headroom attenuation safeguards the audio engine against hardware pipeline distortion and prevents native audio crashes on Xiaomi/HyperOS, Samsung One UI, and Realme ROMs.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card-header">
-            <div class="feature-icon">🌀</div>
-            <span class="card-tag">60/120fps Stage</span>
+            <div class="feature-icon">⏩</div>
+            <span class="card-tag">0.5x to 2.0x Control</span>
           </div>
-          <h3>Hardware 3D Cascade Stages</h3>
-          <p>Fluid, tactile carousel cards angled in 3D perspective. Drag cards smoothly under your finger, tap side cards to glide into focus, or let the loop-immune auto-advance showcase trending hits.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-card-header">
-            <div class="feature-icon">🎙️</div>
-            <span class="card-tag">Spoken Word Hub</span>
-          </div>
-          <h3>Dedicated Podcasts Experience</h3>
-          <p>Explore curated audio shows, complete episode catalogues, playback progress resumption, episode counters, and dedicated podcast 3D cascade shelves.</p>
+          <h3>Smooth Speed & Pitch Control Engine</h3>
+          <p>Adjust playback speeds smoothly from 0.5x up to 2.0x with pristine pitch preservation. Tailored for accelerated podcast listening, audiobooks, lecture review, or relaxed slow-reverb vibes.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-card-header">
             <div class="feature-icon">📜</div>
-            <span class="card-tag">Live Sync & Translate</span>
+            <span class="card-tag">Realtime Karaoke Sync</span>
           </div>
-          <h3>Synchronized Live Lyrics</h3>
-          <p>Sing along with millisecond-synced scrolling lyrics. Includes on-device AI translations for regional and international tracks so you always understand the music you love.</p>
+          <h3>Multi-Provider Synchronized Lyrics</h3>
+          <p>Sing along with millisecond-synced scrolling lyrics aggregated across LRCLIB, YouLyPlus, and KuGou. Features tap-to-seek verse jumping and AI translations for regional and international tracks.</p>
         </div>
       </div>
 
-      <!-- Category 3: Cloud Continuity, Freedom & Privacy -->
+      <!-- Category 3: Massive Global & Hindi Podcasts Experience -->
+      <div class="category-divider" id="podcasts">
+        <span class="category-badge">🎙️ Massive Global & Hindi Podcasts Hub</span>
+        <div class="category-line"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🎙️</div>
+            <span class="card-tag">700+ Verified Shows</span>
+          </div>
+          <h3>12 Hand-Curated Spoken Word Shelves</h3>
+          <p>Comprehensive podcast directory spanning 12 distinct genres: Bedtime Stories, True Crime, Devotional Bhakti, Motivation, Comedy, News, Tech, Business, Horror, Bollywood Cinema, Science, and Mythology.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🇮🇳</div>
+            <span class="card-tag">20–57 Shows Each</span>
+          </div>
+          <h3>Dedicated Authentic Hindi Catalog</h3>
+          <p>Deep authentic Hindi programming curated specifically for our major Hindi audience. Enjoy 20 to 57 verified, high-rating Hindi shows within every single shelf from classic Kahaaniyan to True Crime Hindi.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🌐</div>
+            <span class="card-tag">[ ALL | HI | EN ]</span>
+          </div>
+          <h3>3-Way Segmented Language Filter</h3>
+          <p>Seamlessly filter any category or explore shelf with one-click segmented controls to isolate Hindi or English shows with zero clutter.</p>
+          <div class="podcast-lang-preview">
+            <span class="lang-pill-item">ALL</span>
+            <span class="lang-pill-item active">HI</span>
+            <span class="lang-pill-item">EN</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card-header">
+            <div class="feature-icon">🔖</div>
+            <span class="card-tag">Smart Resumption</span>
+          </div>
+          <h3>Episode Bookmarks & Offline Caching</h3>
+          <p>Automatically saves playback timestamps per episode so you pick up right where you drifted off. Includes episode play counts, lock screen media controls, and full background caching.</p>
+        </div>
+      </div>
+
+      <!-- Category 4: Cloud Continuity, Freedom & Privacy -->
       <div class="category-divider">
         <span class="category-badge">☁️ Cloud Continuity, Freedom & Privacy</span>
         <div class="category-line"></div>
@@ -350,7 +408,7 @@
             <span class="card-tag">Firebase Cloud Sync</span>
           </div>
           <h3>Realtime Cloud Library Sync</h3>
-          <p>Sign in securely with Google SSO. Your custom playlists, favorite tracks, and listening history sync effortlessly across Android phones, tablets, and Windows PCs.</p>
+          <p>Sign in securely with Google SSO. Your custom playlists, favorite tracks, and listening history sync effortlessly across Android phones, tablets, and Windows PCs in real time.</p>
         </div>
 
         <div class="feature-card">
@@ -358,8 +416,8 @@
             <div class="feature-icon">📥</div>
             <span class="card-tag">16KB Page-Size Compliant</span>
           </div>
-          <h3>Lossless Offline Downloads</h3>
-          <p>Save tracks locally in high fidelity for offline listening while traveling without cellular data usage. Powered by high-speed Isar database storage fully compliant with Android 15 & 16.</p>
+          <h3>Lossless Offline Downloads & GlobalSyncPill</h3>
+          <p>Save tracks locally in lossless fidelity for offline listening without cellular data. Features modern drop-down ceiling pill notifications (GlobalSyncPill) and full Android 15 & 16 16KB memory page compliance.</p>
         </div>
 
         <div class="feature-card">
@@ -367,8 +425,8 @@
             <div class="feature-icon">🌙</div>
             <span class="card-tag">Decibel Fadeout</span>
           </div>
-          <h3>Smart Sleep Timer</h3>
-          <p>Drift off peacefully with customizable sleep timers (15m, 30m, 45m, 1h, or End of Track). Features gentle volume attenuation that softly fades audio before stopping.</p>
+          <h3>Smart Sleep Timer with Gentle Attenuation</h3>
+          <p>Drift off peacefully with customizable sleep timers (15m, 30m, 45m, 1h, or End of Track). Gently attenuates volume in the final moments for natural, soothing sleep without abrupt cutoffs.</p>
         </div>
 
         <div class="feature-card">
@@ -376,8 +434,197 @@
             <div class="feature-icon">🛡️</div>
             <span class="card-tag">Zero Ads · Guest Mode</span>
           </div>
-          <h3>100% Ad-Free & Frictionless</h3>
-          <p>No audio ads, no commercial interruptions, no paywalls, and no mandatory login required. Jump straight into the full listening experience as a guest with complete privacy.</p>
+          <h3>100% Ad-Free & Frictionless Guest Mode</h3>
+          <p>No audio ads, no commercial interruptions, no banner popups, and no mandatory login required. Jump straight into the full listening experience as a guest with complete privacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Windows Desktop Keyboard Shortcuts Section -->
+    <section id="shortcuts" class="shortcuts-section reveal-on-scroll">
+      <div class="shortcuts-header">
+        <div class="category-badge">Desktop Power User Experience</div>
+        <h2 class="section-title" style="margin-bottom: 12px;">Windows Keyboard Shortcuts & Smart HUD</h2>
+        <p class="section-subtitle" style="margin-bottom: 0;">
+          Control your entire listening experience straight from your desktop keyboard with zero friction, intelligent typing protection, and a floating desktop HUD.
+        </p>
+      </div>
+
+      <div class="shortcuts-grid">
+        <!-- Category 1: Playback Controls -->
+        <div class="shortcut-category-card">
+          <div class="shortcut-cat-header">
+            <div class="shortcut-cat-icon">⏯️</div>
+            <div class="shortcut-cat-title">Playback Controls</div>
+          </div>
+          <div class="shortcut-list">
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">Space</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Play / Pause</span>
+                <span class="shortcut-note">Toggle stream</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">N</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Next Track</span>
+                <span class="shortcut-note">Queue advance</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">P</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Previous Track</span>
+                <span class="shortcut-note">Restart or previous</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Precision Seeking -->
+        <div class="shortcut-category-card">
+          <div class="shortcut-cat-header">
+            <div class="shortcut-cat-icon">⏩</div>
+            <div class="shortcut-cat-title">Precision Seeking</div>
+          </div>
+          <div class="shortcut-list">
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">←</kbd>
+                <span class="shortcut-sep">or</span>
+                <kbd class="shortcut-key">J</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Seek -10s</span>
+                <span class="shortcut-note">Rewind 10 seconds</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">→</kbd>
+                <span class="shortcut-sep">or</span>
+                <kbd class="shortcut-key">L</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Seek +10s</span>
+                <span class="shortcut-note">Fast-forward 10 seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Volume & Audio -->
+        <div class="shortcut-category-card">
+          <div class="shortcut-cat-header">
+            <div class="shortcut-cat-icon">🔊</div>
+            <div class="shortcut-cat-title">Volume & Audio</div>
+          </div>
+          <div class="shortcut-list">
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">↑</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Volume Up</span>
+                <span class="shortcut-note">+5% per keystroke</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">↓</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Volume Down</span>
+                <span class="shortcut-note">-5% per keystroke</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">M</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Mute / Unmute</span>
+                <span class="shortcut-note">Toggle master audio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Library & Quick Actions -->
+        <div class="shortcut-category-card">
+          <div class="shortcut-cat-header">
+            <div class="shortcut-cat-icon">❤️</div>
+            <div class="shortcut-cat-title">Library & Controls</div>
+          </div>
+          <div class="shortcut-list">
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">H</kbd>
+                <span class="shortcut-sep">or</span>
+                <kbd class="shortcut-key">F</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Favorite Track</span>
+                <span class="shortcut-note">Add / remove favorite</span>
+              </div>
+            </div>
+            <div class="shortcut-row">
+              <div class="shortcut-keys">
+                <kbd class="shortcut-key">SMTC</kbd>
+              </div>
+              <div class="shortcut-info">
+                <span class="shortcut-action">Media Keys</span>
+                <span class="shortcut-note">Hardware keyboards & headsets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop HUD Live Simulation Showcase -->
+      <div class="desktop-hud-showcase">
+        <div class="hud-pill-simulation">
+          <span class="hud-pill-icon">▶</span>
+          <span class="hud-pill-title">Lost In The Drift • Volume: 75%</span>
+          <span class="hud-pill-tag">320k Lossless</span>
+          <div class="hud-pill-vol-bar">
+            <div class="hud-pill-vol-fill"></div>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+          <strong>Floating Desktop HUD Pill:</strong> Every hotkey triggers a sleek on-screen capsule displaying live seek feedback, volume bars, and playback state with zero interruption.
+        </p>
+
+        <!-- Perks Row -->
+        <div class="shortcuts-perks-row">
+          <div class="shortcut-perk">
+            <div class="shortcut-perk-icon">🛡️</div>
+            <div class="shortcut-perk-text">
+              <h4>Smart Typing Guard</h4>
+              <p>Hotkeys automatically suspend when typing into search inputs or text fields, preventing accidental track jumps while searching.</p>
+            </div>
+          </div>
+          <div class="shortcut-perk">
+            <div class="shortcut-perk-icon">🪟</div>
+            <div class="shortcut-perk-text">
+              <h4>Windows SMTC Sync</h4>
+              <p>Fully synchronized with native Windows 10/11 System Media Transport Controls, taskbar controls, and hardware keyboard media dials.</p>
+            </div>
+          </div>
+          <div class="shortcut-perk">
+            <div class="shortcut-perk-icon">⚡</div>
+            <div class="shortcut-perk-text">
+              <h4>Zero Latency Response</h4>
+              <p>Global keyboard event dispatching operates at sub-millisecond response times directly through the Flutter Windows desktop runner.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -403,19 +650,34 @@
               <td><span class="pill-cross">✗ Frequent Audio & Video Ads</span></td>
             </tr>
             <tr>
-              <td><strong>Guest Mode (No Sign-Up)</strong></td>
-              <td class="col-brand"><span class="pill-check">✓ Instant One-Tap Play</span></td>
-              <td><span class="pill-cross">✗ Mandatory Account Wall</span></td>
+              <td><strong>Playback Latency & Fast-Path</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Sub-Second Pipeline (&lt; 300ms)</span></td>
+              <td><span class="pill-cross">✗ Frequent 2–4s Buffering Spins</span></td>
             </tr>
             <tr>
               <td><strong>Audio Streaming Fidelity</strong></td>
-              <td class="col-brand"><span class="pill-check">✓ Lossless up to 320 kbps</span></td>
+              <td class="col-brand"><span class="pill-check">✓ Lossless 320 kbps + Bitrate Switcher</span></td>
               <td><span class="pill-cross">✗ Compressed 96-160k (Paid Tier for 320k)</span></td>
             </tr>
             <tr>
+              <td><strong>Massive Podcasts Catalog</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ 700+ Shows, 12 Shelves & [ ALL | HI | EN ]</span></td>
+              <td><span class="pill-cross">✗ Limited or Paywalled Podcast Catalog</span></td>
+            </tr>
+            <tr>
+              <td><strong>Windows Desktop Hotkeys & HUD</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ 9 Hotkeys + Floating HUD Toast + SMTC</span></td>
+              <td><span class="pill-cross">✗ No Desktop Shortcuts or Basic Hotkeys</span></td>
+            </tr>
+            <tr>
               <td><strong>Hardware Equalizer & Headroom</strong></td>
-              <td class="col-brand"><span class="pill-check">✓ 10-Band EQ + OEM Headroom Safe</span></td>
+              <td class="col-brand"><span class="pill-check">✓ 10 Studio Presets + 5-Band EQ & OEM Safe</span></td>
               <td><span class="pill-cross">✗ Basic 5-band or paywalled</span></td>
+            </tr>
+            <tr>
+              <td><strong>Realtime Karaoke Lyrics</strong></td>
+              <td class="col-brand"><span class="pill-check">✓ Multi-Provider Synced + Tap-to-Seek</span></td>
+              <td><span class="pill-cross">✗ Single Source or Desynced Lyrics</span></td>
             </tr>
             <tr>
               <td><strong>Global Music Catalog</strong></td>
@@ -434,7 +696,7 @@
             </tr>
             <tr>
               <td><strong>Offline Audio Downloads</strong></td>
-              <td class="col-brand"><span class="pill-check">✓ High-Quality Offline Local Storage</span></td>
+              <td class="col-brand"><span class="pill-check">✓ Lossless Isar Storage + Android 15/16 16KB Compliant</span></td>
               <td><span class="pill-cross">✗ Requires Monthly Subscription</span></td>
             </tr>
             <tr>
@@ -465,6 +727,11 @@
           <a href="https://play.google.com/store/apps/details?id=com.melodrift" target="_blank" rel="noopener noreferrer" class="btn-primary-play" style="width: 100%; justify-content: center;">
             Install from Google Play
           </a>
+          <div class="download-sub-actions">
+            <a href="https://github.com/wesoftcorp/melodrift-website/releases" target="_blank" rel="noopener noreferrer" class="btn-pill-sub" title="Direct Production APK Download">
+              <span class="pill-badge">APK</span> Direct Release APK (v1.3.0)
+            </a>
+          </div>
         </div>
 
         <!-- Microsoft Store -->
@@ -479,6 +746,11 @@
           <a href="https://apps.microsoft.com/detail/9NTMFZ12Q80S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer" class="btn-secondary-store" style="width: 100%; justify-content: center;">
             Get on Microsoft Store
           </a>
+          <div class="download-sub-actions">
+            <a href="https://github.com/wesoftcorp/melodrift-website/releases" target="_blank" rel="noopener noreferrer" class="btn-pill-sub" title="Windows Portable Standalone ZIP (No installation needed)">
+              <span class="pill-badge">ZIP</span> Portable Standalone (No Install)
+            </a>
+          </div>
         </div>
       </div>
 
@@ -687,7 +959,7 @@
         rootMargin: '0px 0px -30px 0px'
       });
 
-      document.querySelectorAll('.reveal-on-scroll, .feature-card, .download-card, .comparison-wrapper').forEach(el => {
+      document.querySelectorAll('.reveal-on-scroll, .feature-card, .download-card, .comparison-wrapper, .shortcuts-section, .shortcut-category-card').forEach(el => {
         el.classList.add('reveal-on-scroll');
         observer.observe(el);
       });
